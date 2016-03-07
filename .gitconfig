@@ -1,0 +1,24 @@
+[push]
+  default = current
+[user]
+  name = Chris Maloney
+  email = voldrani@gmail.com
+[alias]
+  br = branch
+  co = checkout
+  ct = commit
+  d = diff
+  fe = fetch origin
+  lol = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  s = status
+  ss = status -s
+  statsu = status
+  nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff
+  nukem = !git clean -dxff && git checkout -f
+  tag = tag -a
+[color]
+  ui = true
+[diff]
+  submodule = log
+[status]
+  submodulesummary = 1
