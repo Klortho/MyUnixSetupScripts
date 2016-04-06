@@ -15,7 +15,7 @@
   statsu = status
   nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff
   nukem = !git clean -dxff && git checkout -f
-  tag = tag -a
+  ta = tag -a
 [color]
   ui = true
 [diff]
