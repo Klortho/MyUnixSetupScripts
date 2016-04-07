@@ -22,3 +22,7 @@
   submodule = log
 [status]
   submodulesummary = 1
+[merge "ours"]
+  name = "Keep ours merge"
+  driver = true
+
