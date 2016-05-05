@@ -13,8 +13,12 @@
   s = status
   ss = status -s
   statsu = status
-  nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff
-  nukem = !git clean -dxff && git checkout -f
+
+  # git nuke feature - see the README
+  nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff $(git config --get-all nonuke.files | sed 's/^/-e /')
+  nukem = !git clean -dxff $(git config --get-all nonuke.files | sed 's/^/-e /') && git checkout -f 
+  nonuke = "!f() { git config $1 nonuke.files $2; }; f"
+
   ta = tag -a
 [color]
   ui = true
