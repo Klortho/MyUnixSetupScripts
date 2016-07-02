@@ -1,5 +1,32 @@
 # My dotfiles
 
+## Bash startup scripts
+
+See this post for a good, quick summary: [Bash startup scripts on Linux and Mac 
+OS X](https://coderwall.com/p/u003pa/bash-startup-scripts-on-linux-and-mac-os-x).
+
+Two things determine what startup script get executed:
+
+* Is the shell interactive or not? That is, are standard in/out tied to a
+  terminal?
+* Is it a login shell?
+
+Typically, after you've logged into a machine and started up a windows manager,
+any new terminals you open are *not* login shells.
+
+Login shells look for /etc/profile, ~/.profile, ~/.bash_login, or ~/.bash_profile,
+and source the first one only.
+
+Non-login shells source .bashrc.
+
+***Never put any commands that produce output in .bashrc!*** This causes 
+ssh to break.
+
+Mac OS X has a quirk in that the terminal program (and iterm, too) 
+starts new shells as login
+shells. Fix by telling it to start new shells with /bin/bash.
+
+
 ## Resources / links
 
 Here are some resources to check out, maybe someday:
