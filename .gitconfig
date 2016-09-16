@@ -1,8 +1,8 @@
 [push]
   default = current
 [user]
-  name = Chris Maloney
-  email = voldrani@gmail.com
+	name = Chris Maloney
+	email = maloneyc@ncbi.nlm.nih.gov
 [alias]
   br = branch
   co = checkout
@@ -13,8 +13,12 @@
   s = status
   ss = status -s
   statsu = status
-  nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff
-  nukem = !git clean -dxff && git checkout -f
+
+  # `nuke` feature: see here for info: https://github.com/Klortho/dotfiles
+  nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff $(git config --get-all nonuke.files | sed 's/^/-e /')
+  nukem = !git clean -dxff $(git config --get-all nonuke.files | sed 's/^/-e /') && git checkout -f 
+  nonuke = "!f() { git config $1 nonuke.files $2; }; f"
+
   ta = tag -a
 [color]
   ui = true
@@ -26,3 +30,11 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+[core]
+	excludesfile = /Users/klortho/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
