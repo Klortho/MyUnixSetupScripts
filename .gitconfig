@@ -14,7 +14,7 @@
   ss = status -s
   statsu = status
 
-  # `nuke` feature: see here for info: https://github.com/Klortho/dotfiles
+  # `nuke` feature: see https://github.com/Klortho/dotfiles
   nuke = !echo 'DRY RUN. Use nukem to clean:' && git status -s && git clean -ndxff $(git config --get-all nonuke.files | sed 's/^/-e /')
   nukem = !git clean -dxff $(git config --get-all nonuke.files | sed 's/^/-e /') && git checkout -f 
   nonuke = "!f() { git config $1 nonuke.files $2; }; f"
@@ -26,15 +26,7 @@
   submodule = log
 [status]
   submodulesummary = 1
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-[core]
-	excludesfile = /Users/klortho/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[merge "ours"]
+  name = "Keep ours merge"
+  driver = true
+

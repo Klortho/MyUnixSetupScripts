@@ -1,3 +1,2 @@
-# Sublime Text 3 User preferences file
+## moved to my notes pages
 
-Put this into ~/Library/Application Support/Sublime Text 3/Packages/User
