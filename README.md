@@ -1,5 +1,17 @@
 # My dotfiles
 
+## Resources / links
+
+Here are some resources to check out, maybe someday:
+
+* [Sync your Preferences Across Multiple Computers with 
+  GIT](http://codoki.com/2015/02/03/sync-dotfiles-across-multiple-computers/)
+* [https://dotfiles.github.io/]()
+* [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)
+* [Mathiasbynens (legendary) dotfile for OS 
+  X](https://github.com//dotfiles/blob/master/.osx)
+
+
 ## Bash startup scripts
 
 See this post for a good, quick summary: [Bash startup scripts on Linux and Mac 
@@ -25,18 +37,6 @@ ssh to break.
 Mac OS X has a quirk in that the terminal program (and iterm, too) 
 starts new shells as login
 shells. Fix by telling it to start new shells with /bin/bash.
-
-
-## Resources / links
-
-Here are some resources to check out, maybe someday:
-
-* [Sync your Preferences Across Multiple Computers with 
-  GIT](http://codoki.com/2015/02/03/sync-dotfiles-across-multiple-computers/)
-* [https://dotfiles.github.io/]()
-* [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)
-* [Mathiasbynens (legendary) dotfile for OS 
-  X](https://github.com//dotfiles/blob/master/.osx)
 
 
 ## .gitconfig
@@ -78,4 +78,11 @@ In the aliases for `nuke` and `nukem`, you have to use two `f`s in the options,
 because that makes sure that git cleans even clones of other repos, that are in 
 subdirectories of this one. See [this blog 
 post](https://major.io/2012/10/24/using-git-clean-to-remove-subdirectories-containing-git-repositories/).
+
+## Atom
+
+Put these into ~/.atom/
+
+* [keymap.cson](.atom/keymap.cson) - stole from [this gist](https://gist.github.com/kndl/9576567).
+
 
